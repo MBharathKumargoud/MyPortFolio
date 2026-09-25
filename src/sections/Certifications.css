@@ -1,0 +1,123 @@
+/* ============================================================
+   Certifications Section
+   ============================================================ */
+
+.certifications {
+  padding: var(--section-pad);
+  border-top: 1px solid var(--border);
+}
+
+.certifications__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.cert-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 1.75rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  transition: border-color var(--transition), transform var(--transition);
+  position: relative;
+}
+
+.cert-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.cert-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.cert-card__org {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cert-card__date {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.cert-card__name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.cert-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cert-card__badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(200, 169, 126, 0.2);
+  padding: 0.25rem 0.6rem;
+  width: fit-content;
+}
+
+.cert-card__id {
+  font-size: 0.68rem;
+  font-family: monospace;
+  color: var(--text-secondary);
+}
+
+.cert-card__action {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.cert-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition);
+}
+
+.cert-card__btn:hover {
+  color: var(--accent);
+}
+
+.cert-card__btn svg {
+  transition: transform var(--transition);
+}
+
+.cert-card__btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 600px) {
+  .certifications__grid {
+    grid-template-columns: 1fr;
+  }
+}

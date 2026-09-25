@@ -1,0 +1,406 @@
+/* ============================================================
+   Projects Section — Corporate Architectural Layout
+   ============================================================ */
+
+.projects {
+  padding: var(--section-pad);
+  border-top: 1px solid var(--border);
+}
+
+.projects__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin-top: 3.5rem;
+}
+
+.project-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: border-color var(--transition);
+}
+
+.project-block:hover {
+  border-color: rgba(200, 169, 126, 0.45);
+}
+
+/* Header bar */
+.project-block__header {
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.project-block__num-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.project-block__number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  color: var(--accent);
+}
+
+.project-block__badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.project-block__domain {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.project-block__pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.4);
+}
+
+/* Main Two-Column */
+.project-block__main {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: stretch;
+}
+
+/* Left panel */
+.project-block__content {
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-block__title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.project-block__desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 58ch;
+}
+
+.project-block__features-wrap {
+  margin-bottom: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-block__features-label,
+.project-block__tech-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+.project-block__features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.5rem 1.25rem;
+}
+
+.project-block__feature-item {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  line-height: 1.6;
+}
+
+.project-block__dash {
+  width: 6px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.project-block__tech-wrap {
+  margin-bottom: 2.25rem;
+}
+
+.project-block__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: var(--accent-dim2);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.75rem;
+}
+
+/* Action buttons */
+.project-block__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-project {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.btn-project--live {
+  background: var(--accent);
+  color: #0D0E0F;
+}
+.btn-project--live:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-project--github {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+.btn-project--github:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Right panel: Browser Window Blueprint */
+.project-block__preview-pane {
+  border-left: 1px solid var(--border);
+  background: #090A0B;
+  display: flex;
+  flex-direction: column;
+}
+
+.browser-window {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.browser-window__top {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #0D0E0F;
+}
+
+.browser-window__controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.browser-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #252627;
+}
+
+.browser-window__address-bar {
+  flex: 1;
+  background: #141516;
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.browser-window__lock {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.browser-window__url {
+  font-size: 0.68rem;
+  font-family: monospace;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.browser-window__canvas {
+  padding: 2rem 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blueprint-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.blueprint-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.blueprint-status {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+}
+
+.blueprint-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.blueprint-node {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 0.95rem 1.15rem;
+}
+
+.blueprint-node--accent {
+  border-color: rgba(200, 169, 126, 0.3);
+  background: rgba(200, 169, 126, 0.03);
+}
+
+.blueprint-node__step {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.blueprint-node__title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.blueprint-node__detail {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.blueprint-arrow {
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.85rem;
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.browser-window__action-bar {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.browser-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  text-decoration: none;
+}
+.browser-launch-btn:hover {
+  color: var(--accent);
+}
+
+/* Responsiveness */
+@media (max-width: 960px) {
+  .project-block__main {
+    grid-template-columns: 1fr;
+  }
+  .project-block__preview-pane {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-block__header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .project-block__content {
+    padding: 1.5rem 1.25rem;
+  }
+  .project-block__features {
+    grid-template-columns: 1fr;
+  }
+  .project-block__actions {
+    flex-direction: column;
+  }
+  .btn-project {
+    width: 100%;
+    justify-content: center;
+  }
+  .browser-window__canvas {
+    padding: 1.25rem 1rem;
+  }
+}
