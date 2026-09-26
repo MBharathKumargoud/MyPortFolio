@@ -118,7 +118,7 @@ export const projects = [
       "Deployed and accessible live on Netlify",
     ],
     tech: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "https://expensetracker0505.netlify.app/",
+    liveUrl: "https://expensetrackerc7.netlify.app/",
     githubUrl: "https://github.com/MBharathKumargoud/Expense-Tracker",
   },
 ];

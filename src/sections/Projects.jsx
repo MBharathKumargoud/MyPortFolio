@@ -134,7 +134,7 @@ export default function Projects() {
                         <span className="browser-window__url">
                           {project.slug === "careerx"
                             ? "placement-agent-aysa.onrender.com"
-                            : "expensetracker0505.netlify.app"}
+                            : "expensetrackerc7.netlify.app"}
                         </span>
                       </div>
                     </div>
