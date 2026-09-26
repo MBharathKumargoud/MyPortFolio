@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { experience, certifications } from "../data/portfolioData";
+import { experience } from "../data/portfolioData";
 import CertificateModal from "../components/CertificateModal";
 import "./Experience.css";
 
@@ -8,19 +8,15 @@ export default function Experience() {
   const [ref, visible] = useScrollReveal();
   const [activeCert, setActiveCert] = useState(null);
 
-  const handleOpenCert = (certImg, title, org) => {
-    const found = certifications.find(
-      (c) => c.org.toLowerCase().includes(org.toLowerCase())
-    );
-    if (found) {
-      setActiveCert(found);
-    } else {
-      setActiveCert({
-        name: title,
-        org: org,
-        image: certImg,
-      });
-    }
+  const handleOpenCert = (item) => {
+    setActiveCert({
+      name: item.role,
+      org: item.company,
+      image: item.certificateImage,
+      date: item.period,
+      credentialId: item.credentialId,
+      result: item.type,
+    });
   };
 
   return (
@@ -34,7 +30,7 @@ export default function Experience() {
         <h2 id="experience-heading" className="section-heading">
           EXPERIENCE &amp;
           <br />
-          PRACTICE.
+          TRAINING.
         </h2>
 
         <div
@@ -65,12 +61,25 @@ export default function Experience() {
                   <button
                     type="button"
                     className="experience__cert-btn"
-                    onClick={() =>
-                      handleOpenCert(item.certificateImage, item.role, item.company)
-                    }
-                    aria-label={`View verification certificate for ${item.role} at ${item.company}`}
+                    onClick={() => handleOpenCert(item)}
+                    aria-label={`View completion certificate for ${item.role} at ${item.company}`}
                   >
-                    <span>View Completion Certificate ↗</span>
+                    <span>View Certificate</span>
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 10L10 2M10 2H4M10 2V8"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </button>
                 )}
               </div>

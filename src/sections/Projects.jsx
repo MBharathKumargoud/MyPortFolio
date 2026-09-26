@@ -28,7 +28,7 @@ const GithubIcon = () => (
     fill="currentColor"
     aria-hidden="true"
   >
-    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
   </svg>
 );
 
@@ -42,7 +42,7 @@ export default function Projects() {
         <h2 id="projects-heading" className="section-heading">
           SELECTED
           <br />
-          PROJECTS.
+          WORK.
         </h2>
 
         <div
@@ -51,7 +51,7 @@ export default function Projects() {
         >
           {projects.map((project) => (
             <article key={project.id} className="project-block">
-              {/* Top Banner Row */}
+              {/* Header Bar */}
               <div className="project-block__header">
                 <div className="project-block__num-wrap">
                   <span className="project-block__number">{project.id}</span>
@@ -60,24 +60,24 @@ export default function Projects() {
                 <div className="project-block__domain">
                   <span className="project-block__pulse" aria-hidden="true" />
                   <span>
-                    {project.slug === "careerx" ? "Render Production" : "Netlify Production"}
+                    {project.slug === "careerx" ? "Render Active Instance" : "Netlify Active Instance"}
                   </span>
                 </div>
               </div>
 
-              {/* Main Two-Column Layout */}
+              {/* Two Column Layout */}
               <div className="project-block__main">
-                {/* Left: Spec & Details */}
+                {/* Details Column */}
                 <div className="project-block__content">
                   <h3 className="project-block__title">{project.title}</h3>
                   <p className="project-block__desc">{project.description}</p>
 
                   <div className="project-block__features-wrap">
-                    <p className="project-block__features-label">Key Capabilities</p>
+                    <p className="project-block__features-label">Core Capabilities</p>
                     <ul className="project-block__features" role="list">
                       {project.features.map((feature) => (
                         <li key={feature} className="project-block__feature-item">
-                          <span className="project-block__dash" aria-hidden="true" />
+                          <span className="project-block__dash" aria-hidden="true">—</span>
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -85,7 +85,7 @@ export default function Projects() {
                   </div>
 
                   <div className="project-block__tech-wrap">
-                    <p className="project-block__tech-label">Technologies</p>
+                    <p className="project-block__tech-label">Architecture &amp; Tech Stack</p>
                     <div className="project-block__tech-list" aria-label="Technologies used">
                       {project.tech.map((t) => (
                         <span key={t} className="tech-badge">
@@ -95,31 +95,32 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  {/* Actions */}
+                  {/* Explicit VIEW LIVE and VIEW GITHUB Buttons */}
                   <div className="project-block__actions">
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-project btn-project--live"
-                      aria-label={`${project.title} — Live Project`}
+                      aria-label={`${project.title} — View Live`}
                     >
-                      <span>LIVE PROJECT →</span>
+                      <span>VIEW LIVE</span>
+                      <ExternalArrowIcon />
                     </a>
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-project btn-project--github"
-                      aria-label={`${project.title} — View Source on GitHub`}
+                      aria-label={`${project.title} — View GitHub`}
                     >
                       <GithubIcon />
-                      <span>VIEW SOURCE →</span>
+                      <span>VIEW GITHUB</span>
                     </a>
                   </div>
                 </div>
 
-                {/* Right: Clean Browser Console Blueprint */}
+                {/* Right: Technical Blueprint Pane */}
                 <div className="project-block__preview-pane">
                   <div className="browser-window">
                     <div className="browser-window__top">
@@ -132,7 +133,7 @@ export default function Projects() {
                         <span className="browser-window__lock">🔒</span>
                         <span className="browser-window__url">
                           {project.slug === "careerx"
-                            ? "placement-agent-aysa.onrender.com/agent/playground/"
+                            ? "placement-agent-aysa.onrender.com"
                             : "expensetracker0505.netlify.app"}
                         </span>
                       </div>
@@ -140,59 +141,59 @@ export default function Projects() {
 
                     <div className="browser-window__canvas">
                       <div className="blueprint-header">
-                        <span className="blueprint-tag">SYSTEM BLUEPRINT</span>
+                        <span className="blueprint-tag">SYSTEM SPECIFICATION</span>
                         <span className="blueprint-status">ACTIVE DEPLOYMENT</span>
                       </div>
 
                       {project.slug === "careerx" ? (
                         <div className="blueprint-diagram">
                           <div className="blueprint-node">
-                            <span className="blueprint-node__step">01. INGESTION</span>
-                            <p className="blueprint-node__title">Candidate Profile</p>
+                            <span className="blueprint-node__step">01. DATA INGESTION</span>
+                            <p className="blueprint-node__title">Candidate Profile &amp; Repositories</p>
                             <p className="blueprint-node__detail">
-                              Resume PDF/DOCX Parser + Public GitHub Repositories
+                              Resume PDF/DOCX Parser + Public GitHub API Fetcher
                             </p>
                           </div>
                           <div className="blueprint-arrow">↓</div>
                           <div className="blueprint-node blueprint-node--accent">
-                            <span className="blueprint-node__step">02. REASONING ENGINE</span>
+                            <span className="blueprint-node__step">02. REASONING PIPELINE</span>
                             <p className="blueprint-node__title">FastAPI + LangChain</p>
                             <p className="blueprint-node__detail">
-                              Google Gemini API · Role-fit scoring &amp; gap diagnosis
+                              Google Gemini API · Multi-dimensional Role-Fit &amp; Gap Diagnostics
                             </p>
                           </div>
                           <div className="blueprint-arrow">↓</div>
                           <div className="blueprint-node">
-                            <span className="blueprint-node__step">03. SYNTHESIS</span>
-                            <p className="blueprint-node__title">Actionable Career Roadmap</p>
+                            <span className="blueprint-node__step">03. STRATEGIC OUTPUT</span>
+                            <p className="blueprint-node__title">Career Acceleration Plan</p>
                             <p className="blueprint-node__detail">
-                              30-day action plan · 60–90 day milestones · Interview prep
+                              Prioritized skills, interview prep, 30-day plan &amp; 60–90 day milestones
                             </p>
                           </div>
                         </div>
                       ) : (
                         <div className="blueprint-diagram">
                           <div className="blueprint-node">
-                            <span className="blueprint-node__step">01. CLIENT GATEWAY</span>
-                            <p className="blueprint-node__title">Registration &amp; Auth</p>
+                            <span className="blueprint-node__step">01. SECURITY GATEWAY</span>
+                            <p className="blueprint-node__title">Authentication &amp; Validation</p>
                             <p className="blueprint-node__detail">
-                              Multi-rule password validation (length, letter, number, special char)
+                              Rigorous client-side password policy (length, letter, number, special char)
                             </p>
                           </div>
                           <div className="blueprint-arrow">↓</div>
                           <div className="blueprint-node blueprint-node--accent">
-                            <span className="blueprint-node__step">02. SESSION CONTROLLER</span>
-                            <p className="blueprint-node__title">Authentication &amp; Recovery</p>
+                            <span className="blueprint-node__step">02. SESSION MANAGER</span>
+                            <p className="blueprint-node__title">User Account State</p>
                             <p className="blueprint-node__detail">
-                              Secure account access and password-reset workflows
+                              Persistent user session state and password recovery workflows
                             </p>
                           </div>
                           <div className="blueprint-arrow">↓</div>
                           <div className="blueprint-node">
-                            <span className="blueprint-node__step">03. LEDGER DASHBOARD</span>
-                            <p className="blueprint-node__title">Expense Management</p>
+                            <span className="blueprint-node__step">03. LEDGER INTERFACE</span>
+                            <p className="blueprint-node__title">Expense Ledger &amp; Calculations</p>
                             <p className="blueprint-node__detail">
-                              Interactive balance ledger &amp; expense tracking interface
+                              Real-time transaction tracking, balance calculation, and category breakdown
                             </p>
                           </div>
                         </div>
@@ -205,7 +206,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           className="browser-launch-btn"
                         >
-                          <span>Launch Live Deployed Instance</span>
+                          <span>Launch Live Deployment</span>
                           <ExternalArrowIcon />
                         </a>
                       </div>

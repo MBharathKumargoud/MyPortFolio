@@ -17,7 +17,7 @@ export default function Certifications() {
       <div className="container">
         <p className="section-label">06 / Certifications</p>
         <h2 id="certs-heading" className="section-heading">
-          CERTIFICATIONS &amp;
+          VERIFIED
           <br />
           CREDENTIALS.
         </h2>
@@ -43,7 +43,7 @@ export default function Certifications() {
                 )}
                 {cert.credentialId && (
                   <span className="cert-card__id">
-                    ID: {cert.credentialId.slice(0, 16)}...
+                    ID: {cert.credentialId.length > 20 ? `${cert.credentialId.slice(0, 16)}...` : cert.credentialId}
                   </span>
                 )}
               </div>

@@ -12,7 +12,7 @@ export default function Education() {
         <h2 id="education-heading" className="section-heading">
           ACADEMIC
           <br />
-          FOUNDATIONS.
+          BACKGROUND.
         </h2>
 
         <div
@@ -31,6 +31,9 @@ export default function Education() {
               <div className="education__right">
                 <h3 className="education__degree">{item.degree}</h3>
                 <p className="education__institution">{item.institution}</p>
+                {item.details && (
+                  <p className="education__details">{item.details}</p>
+                )}
               </div>
             </article>
           ))}

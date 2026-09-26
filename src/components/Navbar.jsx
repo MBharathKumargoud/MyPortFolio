@@ -4,6 +4,7 @@ import { personalInfo } from "../data/portfolioData";
 import "./Navbar.css";
 
 const navLinks = [
+  { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
@@ -15,9 +16,9 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const scrolled = useNavScroll(40);
+  const scrolled = useNavScroll(20);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("hero");
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function Navbar() {
           if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
-      { rootMargin: "-35% 0px -55% 0px" }
+      { rootMargin: "-30% 0px -60% 0px" }
     );
     sections.forEach((id) => {
       const el = document.getElementById(id);
@@ -68,11 +69,10 @@ export default function Navbar() {
           <a
             href="#hero"
             className="navbar__logo"
-            aria-label="M Bharath Kumar Goud — Home"
+            aria-label="M Bharath — Home"
             onClick={closeMenu}
           >
-            <span className="navbar__logo-main">{personalInfo.nameShort}</span>
-            <span className="navbar__logo-sub">M BHARATH KUMAR GOUD</span>
+            <span className="navbar__logo-main">{personalInfo.displayName}</span>
           </a>
 
           {/* Desktop Links */}
@@ -96,24 +96,9 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               download="M_Bharath_Kumar_Goud_Resume.pdf"
-              aria-label="Download M Bharath Kumar Goud Resume"
+              aria-label="Download Resume"
             >
-              <span>RESUME</span>
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M1 9L9 1M9 1H3M9 1V7"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              Resume
             </a>
           </nav>
 
