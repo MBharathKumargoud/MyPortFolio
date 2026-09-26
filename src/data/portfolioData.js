@@ -12,6 +12,8 @@ export const personalInfo = {
     "Passionate about building real-world applications and exploring the intersection of software development, data and analytics.",
   location: "Hyderabad, India",
   email: "bharathkumargoud267@gmail.com",
+  emailUrl:
+    "https://mail.google.com/mail/?view=cm&to=bharathkumargoud267@gmail.com",
   phone: "+91-94946 01007",
   year: "3rd Year",
   degree: "B.Tech CSE",

@@ -89,18 +89,21 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  transition: opacity var(--transition), transform var(--transition);
+  transition: all var(--transition);
   border: 1px solid var(--text-primary);
 }
 .btn-primary:hover {
-  opacity: 0.92;
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-1px);
 }
 .btn-arrow {
   font-size: 0.9rem;
-  transition: transform var(--transition);
+  transition: transform var(--transition), color var(--transition);
 }
 .btn-primary:hover .btn-arrow {
+  color: var(--accent);
   transform: translateX(3px);
 }
 
@@ -121,9 +124,8 @@
   transition: border-color var(--transition), background-color var(--transition), color var(--transition);
 }
 .btn-secondary:hover {
-  border-color: #424446;
-  background: #1a1c1d;
-  color: #ffffff;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* Social icons row below buttons */
@@ -142,26 +144,20 @@
   padding: 4px;
 }
 .hero__social-icon:hover {
-  color: var(--text-primary);
+  color: var(--accent);
   transform: translateY(-2px);
 }
 
-/* --- Right Column — Portrait & Vertical Statement --- */
+/* --- Right Column — Portrait --- */
 .hero__right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.hero__portrait-group {
-  display: flex;
-  align-items: center;
-  gap: clamp(1.25rem, 2.5vw, 2.25rem);
-}
-
 .hero__image-wrapper {
   position: relative;
-  width: clamp(240px, 28vw, 370px);
+  width: clamp(260px, 32vw, 400px);
 }
 
 .hero__image-frame {
@@ -171,6 +167,12 @@
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero__image-frame:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .hero__image {
@@ -181,38 +183,6 @@
   display: block;
   filter: contrast(1.02) brightness(0.98);
   transition: filter var(--transition-slow);
-}
-
-/* Vertical Statement (Reference layout: Turning / Ideas / Into / Practical / Applications) */
-.hero__vertical-statement {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.75rem;
-  color: var(--text-secondary);
-  font-size: clamp(0.72rem, 0.9vw, 0.82rem);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  user-select: none;
-}
-
-.hero__statement-dash {
-  font-size: 1.1rem;
-  color: var(--accent);
-  line-height: 1;
-  opacity: 0.8;
-}
-
-.hero__statement-words {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  line-height: 1.25;
-  color: #7E7F7C;
-}
-
-.hero__statement-words span {
-  display: block;
 }
 
 /* Responsiveness */
@@ -249,13 +219,7 @@
     justify-content: center;
     width: 100%;
   }
-  .hero__portrait-group {
-    gap: 1rem;
-  }
   .hero__image-wrapper {
-    width: 190px;
-  }
-  .hero__vertical-statement {
-    font-size: 0.68rem;
+    width: 220px;
   }
 }

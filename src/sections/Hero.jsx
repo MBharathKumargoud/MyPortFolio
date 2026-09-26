@@ -152,31 +152,17 @@ export default function Hero() {
           </nav>
         </div>
 
-        {/* ─── Right column — Portrait & Vertical Statement ─── */}
+        {/* ─── Right column — Portrait ─── */}
         <div className="hero__right">
-          <div className="hero__portrait-group">
-            <div className="hero__image-wrapper">
-              <div className="hero__image-frame">
-                <img
-                  src={PHOTO_SRC}
-                  alt="M Bharath Kumar Goud — Professional portrait in corporate business attire"
-                  className="hero__image"
-                  loading="eager"
-                  fetchPriority="high"
-                />
-              </div>
-            </div>
-
-            {/* Vertical Statement directly from reference screenshot */}
-            <div className="hero__vertical-statement" aria-hidden="true">
-              <span className="hero__statement-dash">—</span>
-              <div className="hero__statement-words">
-                <span>Turning</span>
-                <span>Ideas</span>
-                <span>Into</span>
-                <span>Practical</span>
-                <span>Applications</span>
-              </div>
+          <div className="hero__image-wrapper">
+            <div className="hero__image-frame">
+              <img
+                src={PHOTO_SRC}
+                alt="M Bharath Kumar Goud — Professional portrait in corporate business attire"
+                className="hero__image"
+                loading="eager"
+                fetchPriority="high"
+              />
             </div>
           </div>
         </div>

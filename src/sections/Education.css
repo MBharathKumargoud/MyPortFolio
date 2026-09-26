@@ -12,19 +12,25 @@
   flex-direction: column;
   margin-top: 3rem;
   border-top: 1px solid var(--border);
+  border-left: 2px solid var(--border);
+  border-right: 2px solid var(--border);
 }
 
 .education__item {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 2.5rem;
-  padding: 2.75rem 0;
+  padding: 2.75rem clamp(1.75rem, 4vw, 3.5rem);
   border-bottom: 1px solid var(--border);
-  transition: background var(--transition);
+  border-left: 2px solid transparent;
+  transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
+  position: relative;
 }
 
 .education__item:hover {
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(200, 169, 126, 0.02);
+  border-left-color: var(--accent);
+  transform: translateX(2px);
 }
 
 .education__left {

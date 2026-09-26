@@ -81,7 +81,7 @@
   flex-shrink: 0;
 }
 .cert-modal-close:hover {
-  color: var(--text-primary);
+  color: var(--accent);
   border-color: var(--accent);
 }
 
@@ -149,13 +149,17 @@
   text-transform: uppercase;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: color var(--transition);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.35rem 0.75rem;
+  transition: border-color var(--transition), color var(--transition);
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
 }
 .cert-modal-external:hover {
   color: var(--accent);
+  border-color: var(--accent);
 }
 
 @keyframes modalFadeIn {

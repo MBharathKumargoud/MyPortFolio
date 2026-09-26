@@ -34,8 +34,14 @@ export default function Contact() {
               <span className="contact__info-label">Direct Email</span>
               <div className="contact__info-val-wrap">
                 <a
-                  href={`mailto:${personalInfo.email}`}
+                  href={personalInfo.emailUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    navigator.clipboard?.writeText(personalInfo.email);
+                  }}
                   className="contact__info-link"
+                  aria-label="Send email to bharathkumargoud267@gmail.com"
                 >
                   {personalInfo.email}
                 </a>
@@ -100,14 +106,19 @@ export default function Contact() {
 
             <div className="contact__btn-group">
               <a
-                href={`mailto:${personalInfo.email}`}
+                href={personalInfo.emailUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  navigator.clipboard?.writeText(personalInfo.email);
+                }}
                 className="contact__cta-btn contact__cta-btn--primary"
-                aria-label="Send Email"
+                aria-label="Email Bharath via Gmail"
               >
                 EMAIL ME →
               </a>
               <a
-                href={personalInfo.socials.linkedin}
+                href="https://www.linkedin.com/in/bharath-kumar-goud-15786b2a1/"
                 className="contact__cta-btn contact__cta-btn--secondary"
                 target="_blank"
                 rel="noopener noreferrer"

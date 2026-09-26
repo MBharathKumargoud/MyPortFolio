@@ -6,7 +6,7 @@ const socialLinks = [
   { label: "LinkedIn", url: personalInfo.socials.linkedin },
   { label: "LeetCode", url: personalInfo.socials.leetcode },
   { label: "HackerRank", url: personalInfo.socials.hackerrank },
-  { label: "Email", url: `mailto:${personalInfo.email}` },
+  { label: "Email", url: personalInfo.emailUrl },
   { label: "Resume", url: personalInfo.resumeUrl, download: "M_Bharath_Kumar_Goud_Resume.pdf" },
 ];
 

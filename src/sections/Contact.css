@@ -28,6 +28,9 @@
   grid-template-columns: 1.15fr 1fr;
   gap: clamp(2.5rem, 6vw, 6rem);
   align-items: start;
+  border-left: 2px solid var(--border);
+  border-right: 2px solid var(--border);
+  padding: 0 clamp(1.75rem, 4vw, 3.5rem);
 }
 
 /* Info List */
@@ -139,11 +142,14 @@
 }
 
 .contact__cta-btn--primary {
-  background: var(--accent);
+  background: var(--text-primary);
   color: #0D0E0F;
+  border: 1px solid var(--text-primary);
 }
 .contact__cta-btn--primary:hover {
-  opacity: 0.9;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #0D0E0F;
   transform: translateY(-1px);
 }
 

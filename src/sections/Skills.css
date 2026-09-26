@@ -24,7 +24,7 @@
 }
 
 .skills__card:hover {
-  border-color: #3e4042;
+  border-color: var(--accent);
   transform: translateY(-2px);
 }
 

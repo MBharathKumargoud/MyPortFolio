@@ -95,14 +95,19 @@
 }
 
 .about__info-item {
-  padding: 1.25rem 0;
+  padding: 1.25rem 0.5rem;
   border-bottom: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  transition: border-color var(--transition), transform var(--transition);
 }
 .about__info-item:last-child {
-  border-bottom: none;
+  border-bottom: 1px solid transparent;
+}
+.about__info-item:hover {
+  border-bottom-color: var(--accent);
+  transform: translateX(4px);
 }
 
 .about__info-label {

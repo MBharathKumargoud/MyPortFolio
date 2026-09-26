@@ -190,11 +190,14 @@
 }
 
 .btn-project--live {
-  background: var(--accent);
+  background: var(--text-primary);
   color: #0D0E0F;
+  border: 1px solid var(--text-primary);
 }
 .btn-project--live:hover {
-  opacity: 0.9;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #0D0E0F;
   transform: translateY(-1px);
 }
 
